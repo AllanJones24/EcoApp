@@ -9,13 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if let photoSet = PhotoSetLoader.load(jsonFileName: "photos") {
+            PhotoListView(photoSet: photoSet)
+        } else {
+            Text("Error loading photo set.")
         }
-        .padding()
     }
 }
 

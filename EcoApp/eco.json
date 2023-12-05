@@ -6,27 +6,27 @@ eco.json
 	"eco": 
 	[
 		{
-			"image": "Photo0.jpg",
+			"image": ["Photo0a.jpg","Photo0b.jpg"],
 			"name": "Rainbow Trout",
-			"scientific name": "Oncorhynchus mykiss",
+			"scientificName": "Oncorhynchus mykiss",
 			"description": "The rainbow trout is a species of trout native to cold-water tributaries of the Pacific Ocean in Asia and North America."
 		},
 		{
-			"image": "Photo1.jpg",
+			"image": "Photo1a.jpg","Photo1b.jpg",
 			"name": "Cardinal",
-			"scientific name": "Cardinalidae",
+			"scientificName": "Cardinalidae",
 			"description": "TCardinalidae is a family of New World-endemic passerine birds that consists of cardinals, grosbeaks, and buntings."
 		},
 		{
-			"image": "Photo2.jpg",
+			"image": "Photo2a.jpg","Photo2b.jpg",
 			"name": "Venus Flytrap",
-			"scientific name": "Dionaea muscipula",
+			"scientificName": "Dionaea muscipula",
 			"description": "The Venus flytrap is a carnivorous plant native to the temperate and subtropical wetlands of North Carolina and South Carolina, on the East Coast of the United States."
 		},
 		{
-		"image": "Photo3.jpg",
+		"image": "Photo3a.jpg","Photo3b.jpg",
 			"name": "Deer",
-			"scientific name": "Cervidae",
+			"scientificName": "Cervidae",
 			"description": "A deer or true deer is a hoofed ruminant mammal of the family Cervidae."
 		}
 	]
