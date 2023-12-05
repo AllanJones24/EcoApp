@@ -24,7 +24,7 @@ eco.json
 			"description": "The Venus flytrap is a carnivorous plant native to the temperate and subtropical wetlands of North Carolina and South Carolina, on the East Coast of the United States."
 		},
 		{
-		"image": "Photo3a.jpg","Photo3b.jpg",
+			"image": "Photo3a.jpg","Photo3b.jpg",
 			"name": "Deer",
 			"scientificName": "Cervidae",
 			"description": "A deer or true deer is a hoofed ruminant mammal of the family Cervidae."
