@@ -36,7 +36,6 @@ struct PhotoListView: View {
                 }
                 .navigationTitle("Discoveries")
                 .navigationBarItems(trailing: Image(systemName: "info.circle"))
-                
             }
         }
     }
