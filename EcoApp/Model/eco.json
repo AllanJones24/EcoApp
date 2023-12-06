@@ -4,25 +4,25 @@
     "photos":
     [
         {
-            "image": "Photo0.png",
+            "images": ["Photo0.png","Photo0a.png"],
             "name": "Rainbow Trout",
             "scientificName": "Oncorhynchus mykiss",
             "description": "The rainbow trout is a species of trout native to cold-water tributaries of the Pacific Ocean in Asia and North America."
         },
         {
-            "image": "Photo1.png",
+            "images": ["Photo1.png","Photo1a.png"],
             "name": "Northern Cardinal",
             "scientificName": "Cardinalis cardinalis",
             "description": "The northern cardinal, known colloquially as the redbird, common cardinal, red cardinal, or just cardinal, is a bird in the genus Cardinalis."
         },
         {
-            "image": "Photo2.png",
+            "images": ["Photo2.png","Photo2a.png"],
             "name": "Fly Agaric",
             "scientificName": "Amanita muscaria",
             "description": "Amanita muscaria, commonly known as the fly agaric or fly amanita, is a basidiomycete of the genus Amanita."
         },
         {
-        "image": "Photo3.png",
+        "images": ["Photo3.png","Photo3a.png"],
             "name": "Fallow Deer",
             "scientificName": "Dama dama",
             "description": "The European fallow deer, also known as the common fallow deer or simply fallow deer, is a species of ruminant mammal belonging to the family Cervidae. It is historically native to Turkey and possibly the Italian Peninsula, Balkan Peninsula, and the island of Rhodes in Europe."

@@ -21,13 +21,13 @@ struct PhotoSet: Codable {
 
 struct PhotoItem: Codable, Identifiable, Hashable {
     var id = UUID()
-    var imageName: String
+    var imageNames: [String]
     var name: String
     var scientificName: String
     var description: String
 
     enum CodingKeys: String, CodingKey {
-        case imageName = "image"
+        case imageNames = "images"
         case name
         case scientificName
         case description

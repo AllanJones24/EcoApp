@@ -11,8 +11,9 @@ struct PhotoDetailView: View {
     var photo: PhotoItem
 
     var body: some View {
-        let backgroundColor = UIImage(named: "photos/" + self.photo.imageName)?.averageColor.map(Color.init)
-        let complementaryColor = UIImage(named: "photos/" + self.photo.imageName)?.complementaryColor.map(Color.init)
+        let firstImageName = photo.imageNames[safe: 0] ?? ""
+        let backgroundColor = UIImage(named: "photos/" + firstImageName)?.averageColor.map(Color.init)
+        let complementaryColor = UIImage(named: "photos/" + firstImageName)?.complementaryColor.map(Color.init)
 
         VStack {
             Text(self.photo.name)
@@ -25,7 +26,7 @@ struct PhotoDetailView: View {
                     .foregroundColor(complementaryColor)
             }
 
-            if let uiImage = UIImage(named: "photos/" + photo.imageName) {
+            if let uiImage = UIImage(named: "photos/" + firstImageName) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFit()
@@ -33,7 +34,7 @@ struct PhotoDetailView: View {
                     .background(backgroundColor)
                     .cornerRadius(10)
             } else {
-                Text("Image not found: \(self.photo.imageName)")
+                Text("Image not found: \(firstImageName)")
                     .foregroundColor(complementaryColor)
             }
 
@@ -47,7 +48,7 @@ struct PhotoDetailView: View {
         }
         .padding()
         .navigationTitle("Photo Details")
-        .background(backgroundColor) // Set the background color of the entire view
+        .background(backgroundColor)
     }
 }
 
@@ -78,27 +79,6 @@ extension UIImage {
         return UIColor(red: complementaryRed, green: complementaryGreen, blue: complementaryBlue, alpha: 1.0)
     }
 }
-
-// extension Color {
-//    func complementaryColor() -> Color {
-//        let uiColor = UIColor(self)
-//
-//        var hue: CGFloat = 0
-//        var saturation: CGFloat = 0
-//        var brightness: CGFloat = 0
-//        var alpha: CGFloat = 0
-//
-//        uiColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-//
-//        // Increase the saturation to make the color more vibrant
-//        let vibrantSaturation = min(saturation * 1.5, 1.0)
-//
-//        // Calculate the complementary color with the adjusted saturation
-//        let complementaryColor = UIColor(hue: hue, saturation: vibrantSaturation, brightness: brightness, alpha: alpha)
-//
-//        return Color(complementaryColor)
-//    }
-// }
 
 // #Preview {
 //    PhotoDetailView()
