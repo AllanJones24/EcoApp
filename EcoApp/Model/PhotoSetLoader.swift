@@ -12,13 +12,15 @@ class PhotoSetLoader {
         var photoSet: PhotoSet?
         let jsonDecoder = JSONDecoder()
         jsonDecoder.dateDecodingStrategy = .iso8601
-
-        if let jsonFileUrl = Bundle.main.url(forResource: "photos", withExtension: ".json"),
+        
+        if let jsonFileUrl = Bundle.main.url(forResource: "eco", withExtension: ".json"),
            let jsonData = try? Data(contentsOf: jsonFileUrl)
         {
             photoSet = try? jsonDecoder.decode(PhotoSet.self, from: jsonData)
         }
-
+        
+        print("PhotoSet: \(String(describing: photoSet))")
+        
         return photoSet
     }
 }

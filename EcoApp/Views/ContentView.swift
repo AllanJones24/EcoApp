@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        if let photoSet = PhotoSetLoader.load(jsonFileName: "photos") {
+        if let photoSet = PhotoSetLoader.load(jsonFileName: "eco") {
             PhotoListView(photoSet: photoSet)
         } else {
             Text("Error loading photo set.")

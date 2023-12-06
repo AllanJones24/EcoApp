@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		227BC1462B1FECC90015D663 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 227BC1452B1FECC90015D663 /* photos */; };
+		227BC1482B1FEF2C0015D663 /* eco.json in Resources */ = {isa = PBXBuildFile; fileRef = 227BC1472B1FEF2C0015D663 /* eco.json */; };
 		22EC68BE2B1FC42C00D2A58E /* EcoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC68BD2B1FC42C00D2A58E /* EcoAppApp.swift */; };
 		22EC68C02B1FC42C00D2A58E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC68BF2B1FC42C00D2A58E /* ContentView.swift */; };
 		22EC68C22B1FC43000D2A58E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EC68C12B1FC43000D2A58E /* Assets.xcassets */; };
@@ -16,10 +18,11 @@
 		22F712792B1FD2FE005D1EC5 /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F712782B1FD2FE005D1EC5 /* PhotoListView.swift */; };
 		22F7127B2B1FD30C005D1EC5 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7127A2B1FD30C005D1EC5 /* PhotoDetailView.swift */; };
 		22F7127D2B1FD32D005D1EC5 /* PhotoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7127C2B1FD32D005D1EC5 /* PhotoRowView.swift */; };
-		22F7127F2B1FD37F005D1EC5 /* eco.json in Resources */ = {isa = PBXBuildFile; fileRef = 22F7127E2B1FD37F005D1EC5 /* eco.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		227BC1452B1FECC90015D663 /* photos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = photos; sourceTree = "<group>"; };
+		227BC1472B1FEF2C0015D663 /* eco.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eco.json; sourceTree = "<group>"; };
 		22EC68BA2B1FC42C00D2A58E /* EcoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EC68BD2B1FC42C00D2A58E /* EcoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoAppApp.swift; sourceTree = "<group>"; };
 		22EC68BF2B1FC42C00D2A58E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,7 +33,6 @@
 		22F712782B1FD2FE005D1EC5 /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
 		22F7127A2B1FD30C005D1EC5 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		22F7127C2B1FD32D005D1EC5 /* PhotoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRowView.swift; sourceTree = "<group>"; };
-		22F7127E2B1FD37F005D1EC5 /* eco.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = eco.json; path = EcoApp/eco.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,19 +96,12 @@
 		22F712722B1FD156005D1EC5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				22F7127E2B1FD37F005D1EC5 /* eco.json */,
-				22F712732B1FD2A8005D1EC5 /* photos */,
+				227BC1472B1FEF2C0015D663 /* eco.json */,
+				227BC1452B1FECC90015D663 /* photos */,
 				22F712742B1FD2CF005D1EC5 /* PhotoSet.swift */,
 				22F712762B1FD2E3005D1EC5 /* PhotoSetLoader.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		22F712732B1FD2A8005D1EC5 /* photos */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +164,8 @@
 			files = (
 				22EC68C52B1FC43000D2A58E /* Preview Assets.xcassets in Resources */,
 				22EC68C22B1FC43000D2A58E /* Assets.xcassets in Resources */,
-				22F7127F2B1FD37F005D1EC5 /* eco.json in Resources */,
+				227BC1462B1FECC90015D663 /* photos in Resources */,
+				227BC1482B1FEF2C0015D663 /* eco.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,12 +7,34 @@
 
 import SwiftUI
 
+//change name to something else
 struct PhotoRowView: View {
+    var photo: PhotoItem
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            // Add other image here
+            Image(photo.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 80, height: 80)
+                .cornerRadius(8)
+
+            VStack(alignment: .leading) {
+                Text(photo.name)
+                    .font(.headline)
+                    .lineLimit(1)
+
+                Text(photo.description)
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .lineLimit(2)
+            }
+            .padding(.leading, 8)
+        }
     }
 }
 
-#Preview {
-    PhotoRowView()
-}
+// #Preview {
+//    PhotoRowView()
+// }
