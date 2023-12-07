@@ -9,11 +9,13 @@ import SwiftUI
 
 struct PhotoDetailView: View {
     var photo: PhotoItem
+    var uploadedPhotos: [UploadedPhoto]
 
     var body: some View {
-        let firstImageName = photo.imageNames[safe: 0] ?? ""
-        let backgroundColor = UIImage(named: "photos/" + firstImageName)?.averageColor.map(Color.init)
-        let complementaryColor = UIImage(named: "photos/" + firstImageName)?.complementaryColor.map(Color.init)
+        let uploadedPhoto = uploadedPhotos.first(where: { $0.name == photo.name })
+        let uploadedImage = uploadedPhoto?.image
+        let backgroundColor = uploadedImage?.averageColor.map(Color.init)
+        let complementaryColor = uploadedImage?.complementaryColor.map(Color.init)
 
         VStack {
             Text(self.photo.name)
@@ -26,7 +28,7 @@ struct PhotoDetailView: View {
                     .foregroundColor(complementaryColor)
             }
 
-            if let uiImage = UIImage(named: "photos/" + firstImageName) {
+            if let uiImage = uploadedImage {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFit()
@@ -34,8 +36,7 @@ struct PhotoDetailView: View {
                     .background(backgroundColor)
                     .cornerRadius(10)
             } else {
-                Text("Image not found: \(firstImageName)")
-                    .foregroundColor(complementaryColor)
+                Text("No Image")
             }
 
             Text("Description:")

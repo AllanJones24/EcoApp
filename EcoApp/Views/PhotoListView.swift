@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct PhotoListView: View {
-    var photoSet: PhotoSet
+    @State private var isAddingItem = false
     @State private var selectedPhoto: PhotoItem?
+    @State private var photos: [PhotoItem] = []
+    @State private var uploadedPhotos: [UploadedPhoto] = []
+    @State private var selectedImage: UIImage?
+
+    var photoSet: PhotoSet
 
     var body: some View {
         NavigationView {
@@ -21,23 +26,58 @@ struct PhotoListView: View {
                     .opacity(0.5) // Adjust opacity as needed
 
                 // List with Photos
-                List(photoSet.photos) { photo in
-                    Button {
-                        selectedPhoto = photo
-                    } label: {
-                        PhotoRowView(photo: photo)
-                            .padding(.vertical, 8)
-                            .background(Color.white.cornerRadius(10).shadow(color: .gray, radius: 3, x: 0, y: 2))
-                    }.listRowBackground(Color.clear)
+                List {
+                    ForEach(photos) { photo in
+                        Button {
+                            selectedPhoto = photo
+                        } label: {
+                            PhotoRowView(photo: photo, photosPath: photoSet.photosPath)
+                                .padding(8)
+                                .background(Color.white.opacity(0.8).cornerRadius(30))
+                        }
+                        .listRowBackground(Color.clear)
+                    }
+                    .onDelete(perform: deletePhoto)
                 }
-                .listStyle(PlainListStyle()) // Use PlainListStyle to remove the default list style
+                .listStyle(PlainListStyle())
                 .sheet(item: $selectedPhoto) { photo in
-                    PhotoDetailView(photo: photo)
+                    PhotoDetailView(photo: photo, uploadedPhotos: uploadedPhotos)
                 }
                 .navigationTitle("Discoveries")
-                .navigationBarItems(trailing: Image(systemName: "info.circle"))
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing: Button("Add Item") {
+                        isAddingItem.toggle()
+                    }
+                )
+                .sheet(isPresented: $isAddingItem) {
+                    AddItemView(
+                        itemNames: photoSet.photos.map { $0.name },
+                        selectedItems: photos.map { $0.name },
+                        selectedImage: $selectedImage
+                    ) { selectedItem, selectedImage in
+                        if let selectedPhoto = photoSet.photos.first(where: { $0.name == selectedItem }) {
+                            let newPhoto = PhotoItem(
+                                imageNames: selectedPhoto.imageNames,
+                                name: selectedItem,
+                                scientificName: selectedPhoto.scientificName,
+                                description: selectedPhoto.description
+                            )
+                            photos.append(newPhoto)
+
+                            if let selectedImage = selectedImage {
+                                let uploadedPhoto = UploadedPhoto(name: selectedItem, image: selectedImage)
+                                uploadedPhotos.append(uploadedPhoto)
+                            }
+                        }
+                    }
+                }
             }
         }
+    }
+
+    private func deletePhoto(at offsets: IndexSet) {
+        photos.remove(atOffsets: offsets)
     }
 }
 

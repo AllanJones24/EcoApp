@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-// rename
 struct PhotoRowView: View {
     var photo: PhotoItem
+    var photosPath: String
 
     var body: some View {
         HStack {
-            if let secondImageName = photo.imageNames[safe: 1], let secondImage = UIImage(named: "photos/" + secondImageName) {
-                Image(uiImage: secondImage)
+            if let firstImageName = photo.imageNames.first, let firstImage = UIImage(named: "\(photosPath)/\(firstImageName)") {
+                Image(uiImage: firstImage)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
@@ -32,12 +32,7 @@ struct PhotoRowView: View {
     }
 }
 
-// An extension to safely access an element at a given index
-extension Collection {
-    subscript(safe index: Index) -> Element? {
-        indices.contains(index) ? self[index] : nil
-    }
-}
+// remove uploaded photo from photo set
 
 // #Preview {
 //    PhotoRowView()

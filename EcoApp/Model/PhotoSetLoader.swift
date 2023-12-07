@@ -19,8 +19,6 @@ class PhotoSetLoader {
             photoSet = try? jsonDecoder.decode(PhotoSet.self, from: jsonData)
         }
 
-        print("PhotoSet: \(String(describing: photoSet))")
-
         return photoSet
     }
 }

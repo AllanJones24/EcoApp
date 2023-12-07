@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct PhotoSet: Codable {
     var status: String
@@ -32,4 +33,11 @@ struct PhotoItem: Codable, Identifiable, Hashable {
         case scientificName
         case description
     }
+}
+
+//
+struct UploadedPhoto: Identifiable {
+    var id = UUID()
+    var name: String
+    var image: UIImage
 }
