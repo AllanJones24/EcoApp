@@ -20,11 +20,15 @@ struct PhotoDetailView: View {
         VStack {
             Text(self.photo.name)
                 .font(.title)
+                .fontWeight(.bold)
                 .padding()
                 .foregroundColor(complementaryColor)
 
-            VStack(alignment: .leading, spacing: 2) {
-                Text("Scientific Name: \(self.photo.scientificName)")
+            HStack {
+                Text("Scientific Name: ")
+                    .foregroundColor(complementaryColor)
+                    .fontWeight(.semibold)
+                Text(self.photo.scientificName)
                     .foregroundColor(complementaryColor)
             }
 
@@ -34,21 +38,18 @@ struct PhotoDetailView: View {
                     .scaledToFit()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(backgroundColor)
-                    .cornerRadius(10)
             } else {
                 Text("No Image")
             }
 
             Text("Description:")
                 .font(.headline)
+                .fontWeight(.semibold)
                 .foregroundColor(complementaryColor)
 
             Text(self.photo.description)
-                .padding()
                 .foregroundColor(complementaryColor)
         }
-        .padding()
-        .navigationTitle("Photo Details")
         .background(backgroundColor)
     }
 }
